@@ -5,12 +5,21 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -29,7 +38,9 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class SearchActivity extends AppCompatActivity
+        implements NavigationView.OnNavigationItemSelectedListener {
+
     public static final String EXTRA_MEDIKAMENT_NAME = "com.daniel.lucidus.EXTRA_MEDIKAMENT_NAME";
     public static final String EXTRA_MEDIKAMENT_WIRKSTOFF = "com.daniel.lucidus.EXTRA_MEDIKAMENT_WIRKSTOFF";
     public static final String EXTRA_MEDIKAMENT_ANWENDUNG = "com.daniel.lucidus.EXTRA_MEDIKAMENT_ANWENDUNG";
@@ -37,10 +48,9 @@ public class MainActivity extends AppCompatActivity {
 
     private MedikamentViewModel medikamentViewModel;
 
-    private static MainActivity instance;
-
     private RelativeLayout relativeLayout;
 
+    private static SearchActivity instance;
     private TextView begruessungTextView;
 
     final MedikamentAdapter adapter = new MedikamentAdapter();
@@ -48,8 +58,19 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        relativeLayout = findViewById(R.id.relativeLayoutMain);
+        setContentView(R.layout.activity_search);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
 
         instance = this;
 
@@ -185,8 +206,45 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public static MainActivity getInstance() {
+    public static SearchActivity getInstance() {
         return instance;
     }
 
+
+    @Override
+    public void onBackPressed() {
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+    Intent switcher = null;
+
+    @SuppressWarnings("StatementWithEmptyBody")
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        // Handle navigation view item clicks here.
+        int id = item.getItemId();
+
+
+        if (id == R.id.nav_reminder) {
+            switcher = switcher == null? new Intent(this, ReminderActivity.class): switcher;
+            startActivity(switcher);
+            finish();
+
+        }
+
+        if(id == R.id.nav_search){
+            switcher = switcher == null? new Intent(this, SearchActivity.class): switcher;
+            startActivity(switcher);
+            finish();
+        }
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
 }

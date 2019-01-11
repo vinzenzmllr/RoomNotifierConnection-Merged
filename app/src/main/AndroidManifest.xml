@@ -14,15 +14,26 @@
 
         <activity
             android:name=".Activities.AddEditReminderActivity"
-            android:parentActivityName=".Activities.ReminderActivity"
             android:configChanges="orientation"
-            android:screenOrientation="portrait"/>
+            android:parentActivityName=".Activities.ReminderActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Activities.ReminderActivity"
-            android:label="lucidus"
-            android:theme="@style/AppTheme.NoActionBar"
             android:configChanges="orientation"
-            android:screenOrientation="portrait">
+            android:label="lucidus"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+        <activity
+            android:name=".Activities.MedikamentActivity"
+            android:parentActivityName=".Activities.SearchActivity" />
+        <activity
+            android:name=".Activities.SearchActivity"
+            android:configChanges="orientation"
+            android:label="lucidus"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

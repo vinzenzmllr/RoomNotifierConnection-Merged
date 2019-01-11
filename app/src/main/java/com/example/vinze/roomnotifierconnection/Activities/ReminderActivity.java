@@ -282,7 +282,7 @@ public class ReminderActivity extends AppCompatActivity
         }
     }
 
-    Intent switchToReminder = null;
+    Intent switcher = null;
    /* public void onClickSwitch(View view)
     {
         switchToReminder = switchToReminder == null? new Intent(this, ReminderActivity.class): switchToReminder;
@@ -298,12 +298,19 @@ public class ReminderActivity extends AppCompatActivity
         int id = item.getItemId();
 
 
-        if (id == R.id.nav_HomePage) {
-            switchToReminder = switchToReminder == null? new Intent(this, ReminderActivity.class): switchToReminder;
-            startActivity(switchToReminder);
+        if (id == R.id.nav_reminder) {
+            switcher = switcher == null? new Intent(this, ReminderActivity.class): switcher;
+            startActivity(switcher);
             finish();
 
         }
+
+        if(id == R.id.nav_search){
+            switcher = switcher == null? new Intent(this, SearchActivity.class): switcher;
+            startActivity(switcher);
+            finish();
+        }
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

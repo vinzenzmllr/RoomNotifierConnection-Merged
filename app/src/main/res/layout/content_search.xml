@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.vinze.roomnotifierconnection.Activities.MainActivity">
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Activities.SearchActivity"
+    tools:showIn="@layout/app_bar_search">
 
     <RelativeLayout
         android:id="@+id/relativeLayoutMain"
@@ -17,7 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:maxLines="1"
-            tools:text="Suchen..." />
+            tools:Text="Suchen..." />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_view"
@@ -26,16 +28,18 @@
             android:layout_below="@+id/searchText"
             tools:listitem="@layout/medikament_item" />
 
+        <TextView
+            android:id="@+id/begruesungText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="100dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:text="Willkommen bei lucidus!\nGeben sie einen Medikamentennamen oder Wirkstoff ein."/>
+
     </RelativeLayout>
 
-    <TextView
-        android:id="@+id/begruesungText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginTop="100dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:text="Willkommen bei lucidus!\nGeben sie einen Medikamentennamen oder Wirkstoff ein."/>
 
-</android.support.design.widget.CoordinatorLayout>
+
+</android.support.constraint.ConstraintLayout>

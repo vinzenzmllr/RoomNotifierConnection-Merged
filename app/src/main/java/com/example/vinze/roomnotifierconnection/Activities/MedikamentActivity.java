@@ -9,10 +9,10 @@ import android.widget.TextView;
 import com.example.vinze.roomnotifierconnection.R;
 
 
-import static com.example.vinze.roomnotifierconnection.Activities.MainActivity.EXTRA_MEDIKAMENT_ANWENDUNG;
-import static com.example.vinze.roomnotifierconnection.Activities.MainActivity.EXTRA_MEDIKAMENT_NAME;
-import static com.example.vinze.roomnotifierconnection.Activities.MainActivity.EXTRA_MEDIKAMENT_VERSCHREIBUNGSPFLICHTIG;
-import static com.example.vinze.roomnotifierconnection.Activities.MainActivity.EXTRA_MEDIKAMENT_WIRKSTOFF;
+import static com.example.vinze.roomnotifierconnection.Activities.SearchActivity.EXTRA_MEDIKAMENT_ANWENDUNG;
+import static com.example.vinze.roomnotifierconnection.Activities.SearchActivity.EXTRA_MEDIKAMENT_NAME;
+import static com.example.vinze.roomnotifierconnection.Activities.SearchActivity.EXTRA_MEDIKAMENT_VERSCHREIBUNGSPFLICHTIG;
+import static com.example.vinze.roomnotifierconnection.Activities.SearchActivity.EXTRA_MEDIKAMENT_WIRKSTOFF;
 
 public class MedikamentActivity extends AppCompatActivity {
 

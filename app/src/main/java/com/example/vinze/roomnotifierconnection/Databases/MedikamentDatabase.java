@@ -8,7 +8,8 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 
-import com.example.vinze.roomnotifierconnection.Activities.MainActivity;
+
+import com.example.vinze.roomnotifierconnection.Activities.SearchActivity;
 import com.example.vinze.roomnotifierconnection.DAOs.MedikamentDao;
 import com.example.vinze.roomnotifierconnection.Entities.Medikament;
 
@@ -49,13 +50,12 @@ public abstract class MedikamentDatabase extends RoomDatabase {
 
             List<Medikament> medikamentList = new ArrayList<>();
 
-            medikamentList = MainActivity.getInstance().readCSV();
+            medikamentList = SearchActivity.getInstance().readCSV();
 
             medikamentDao.insert(new Medikament("Test", "Test", "Test", "Test"));
 
             for (Medikament medikament : medikamentList) {
                 medikamentDao.insert(medikament);
-                System.out.println(medikament.getName());
             }
 
             return null;
