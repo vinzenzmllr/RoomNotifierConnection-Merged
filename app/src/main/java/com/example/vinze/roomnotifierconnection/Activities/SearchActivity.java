@@ -146,7 +146,6 @@ public class SearchActivity extends AppCompatActivity
         medikamentIntent.putExtra(EXTRA_MEDIKAMENT_VERSCHREIBUNGSPFLICHTIG, medikament.getVerschreibungspflichtig());
 
         startActivity(medikamentIntent);
-
     }
 
     private void filter(String text) {
