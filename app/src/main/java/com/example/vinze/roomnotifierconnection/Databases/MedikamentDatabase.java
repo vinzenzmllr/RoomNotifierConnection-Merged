@@ -52,8 +52,6 @@ public abstract class MedikamentDatabase extends RoomDatabase {
 
             medikamentList = SearchActivity.getInstance().readCSV();
 
-            medikamentDao.insert(new Medikament("Test", "Test", "Test", "Test"));
-
             for (Medikament medikament : medikamentList) {
                 medikamentDao.insert(medikament);
             }

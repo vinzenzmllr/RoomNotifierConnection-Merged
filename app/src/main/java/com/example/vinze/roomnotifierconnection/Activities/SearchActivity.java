@@ -109,20 +109,20 @@ public class SearchActivity extends AppCompatActivity
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
+                if(s.toString().equals("") || s.toString().isEmpty()) {
+                    adapter.getFilter().filter(s.toString());
+                    recyclerView.setVisibility(View.INVISIBLE);
+                    begruessungTextView.setVisibility(View.INVISIBLE);
+                } else {
+                    adapter.getFilter().filter(s.toString());
+                    recyclerView.setVisibility(View.VISIBLE);
+                    begruessungTextView.setVisibility(View.INVISIBLE);
+                }
             }
 
             @Override
             public void afterTextChanged(Editable s) {
-                if(s.toString().equals("") || s.toString().isEmpty()) {
-                    adapter.setMedikamente(unfilteredList);
-                    recyclerView.setVisibility(View.INVISIBLE);
-                    begruessungTextView.setVisibility(View.INVISIBLE);
-                } else {
-                    filter(s.toString());
-                    recyclerView.setVisibility(View.VISIBLE);
-                    begruessungTextView.setVisibility(View.INVISIBLE);
-                }
+
             }
         });
 
