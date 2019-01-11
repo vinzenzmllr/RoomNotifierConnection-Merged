@@ -15,13 +15,13 @@
         <activity
             android:name=".Activities.AddEditReminderActivity"
             android:configChanges="orientation"
-            android:launchMode="singleTop"
             android:parentActivityName=".Activities.ReminderActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".Activities.ReminderActivity"
             android:configChanges="orientation"
             android:label="lucidus"
+            android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
 
