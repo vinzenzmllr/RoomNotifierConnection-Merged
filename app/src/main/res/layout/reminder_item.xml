@@ -9,7 +9,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp">
+        android:padding="8dp"
+        android:background="@color/colorPrimaryDark">
 
 
         <TextView
@@ -20,7 +21,8 @@
             android:ellipsize="end"
             android:maxLines="1"
             android:text="Title"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@android:color/white" />
 
 
         <TextView
@@ -28,7 +30,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/text_view_title"
-            android:text="MorningTime" />
+            android:text="MorningTime"
+            android:textColor="@android:color/darker_gray" />
 
         <TextView
             android:id="@+id/text_view_noon"
@@ -36,7 +39,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/text_view_title"
             android:layout_centerHorizontal="true"
-            android:text="NoonTime" />
+            android:text="NoonTime"
+            android:textColor="@android:color/darker_gray" />
 
         <TextView
             android:id="@+id/text_view_evening"
@@ -44,7 +48,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/text_view_title"
             android:layout_alignParentRight="true"
-            android:text="NoonTime" />
+            android:text="NoonTime"
+            android:textColor="@android:color/darker_gray" />
 
 
     </RelativeLayout>

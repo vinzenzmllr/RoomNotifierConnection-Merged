@@ -221,6 +221,13 @@ public class SearchActivity extends AppCompatActivity
     }
 
     Intent switcher = null;
+   /* public void onClickSwitch(View view)
+    {
+        switchToReminder = switchToReminder == null? new Intent(this, ReminderActivity.class): switchToReminder;
+        startActivity(switchToReminder);
+        finish();
+    }*/
+
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override

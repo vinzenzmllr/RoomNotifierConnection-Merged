@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.vinze.roomnotifierconnection.Activities.MedikamentActivity">
+    tools:context="com.example.vinze.roomnotifierconnection.Activities.MedikamentActivity"
+    android:background="@color/colorPrimaryDark">
 
     <LinearLayout
         android:id="@+id/linName"
@@ -21,14 +22,16 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:text="Name"/>
+            android:text="Name"
+            android:textColor="@android:color/darker_gray"/>
 
         <TextView
             android:id="@+id/nameText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
+
             />
 
     </LinearLayout>
@@ -49,14 +52,15 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:text="Wirkstoff"/>
+            android:text="Wirkstoff"
+            android:textColor="@android:color/darker_gray"/>
 
         <TextView
             android:id="@+id/wirkstoffText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             />
 
     </LinearLayout>
@@ -78,14 +82,15 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:text="Anwendungsbereich"/>
+            android:text="Anwendungsbereich"
+            android:textColor="@android:color/darker_gray"/>
 
         <TextView
             android:id="@+id/anwendungText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             />
 
     </LinearLayout>
@@ -106,14 +111,15 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:text="Verschreibungspflichtig"/>
+            android:text="Verschreibungspflichtig"
+            android:textColor="@android:color/darker_gray"/>
 
         <TextView
             android:id="@+id/verschreibungsText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             />
 
     </LinearLayout>

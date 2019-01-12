@@ -4,15 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:showIn="@layout/app_bar_reminder">
+    tools:showIn="@layout/app_bar_reminder"
+    android:background="@color/colorPrimaryDark">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="55dp"
         android:clipToPadding="false"
         tools:listitem="@layout/reminder_item"
-        android:layout_marginTop="55dp"/>
+        android:background="@color/colorPrimaryDark"/>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/button_add_note"
