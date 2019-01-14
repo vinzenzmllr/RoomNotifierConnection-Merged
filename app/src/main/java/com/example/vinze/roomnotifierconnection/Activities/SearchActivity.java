@@ -220,13 +220,8 @@ public class SearchActivity extends AppCompatActivity
         }
     }
 
-    Intent switcher = null;
-   /* public void onClickSwitch(View view)
-    {
-        switchToReminder = switchToReminder == null? new Intent(this, ReminderActivity.class): switchToReminder;
-        startActivity(switchToReminder);
-        finish();
-    }*/
+    Intent switchToReminder = null;
+    Intent switchToSearch = null;
 
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -237,16 +232,16 @@ public class SearchActivity extends AppCompatActivity
 
 
         if (id == R.id.nav_reminder) {
-            switcher = switcher == null? new Intent(this, ReminderActivity.class): switcher;
-            startActivity(switcher);
-            finish();
+            switchToReminder = switchToReminder == null? new Intent(this, ReminderActivity.class): switchToReminder;
+            startActivity(switchToReminder);
+            //finish();
 
         }
 
-        if(id == R.id.nav_search){
-            switcher = switcher == null? new Intent(this, SearchActivity.class): switcher;
-            startActivity(switcher);
-            finish();
+        else if(id == R.id.nav_search){
+            switchToSearch = switchToSearch == null? new Intent(this, SearchActivity.class): switchToSearch;
+            startActivity(switchToSearch);
+            //finish();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
