@@ -26,6 +26,7 @@ import android.widget.TextView;
 
 import com.example.vinze.roomnotifierconnection.Adapter.MedikamentAdapter;
 import com.example.vinze.roomnotifierconnection.Entities.Medikament;
+import com.example.vinze.roomnotifierconnection.Entities.Reminder;
 import com.example.vinze.roomnotifierconnection.R;
 import com.example.vinze.roomnotifierconnection.ViewModels.MedikamentViewModel;
 
@@ -47,8 +48,8 @@ public class SearchActivity extends AppCompatActivity
     public static final String EXTRA_MEDIKAMENT_VERSCHREIBUNGSPFLICHTIG = "com.daniel.lucidus.EXTRA_MEDIKAMENT_VERSCHREIBUNGSPFLICHTIG";
 
     private MedikamentViewModel medikamentViewModel;
-
-    private RelativeLayout relativeLayout;
+    private Intent switchToReminder;
+    private Intent switchToSearch;
 
     private static SearchActivity instance;
     private TextView begruessungTextView;
@@ -68,10 +69,11 @@ public class SearchActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.navigation_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-
+        switchToSearch = this.getIntent();
+        switchToReminder = new ReminderActivity().getIntent();
         instance = this;
 
         begruessungTextView = findViewById(R.id.begruesungText);
@@ -220,9 +222,6 @@ public class SearchActivity extends AppCompatActivity
         }
     }
 
-    Intent switchToReminder = null;
-    Intent switchToSearch = null;
-
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -232,16 +231,29 @@ public class SearchActivity extends AppCompatActivity
 
 
         if (id == R.id.nav_reminder) {
-            switchToReminder = switchToReminder == null? new Intent(this, ReminderActivity.class): switchToReminder;
-            startActivity(switchToReminder);
-            //finish();
+            if(switchToReminder == null){
+                switchToReminder = new Intent(this, ReminderActivity.class);
+                startActivity(switchToReminder);
 
+            }
+            else{
+                startActivity(switchToReminder);
+                System.out.println("not new");
+            }
         }
 
         else if(id == R.id.nav_search){
-            switchToSearch = switchToSearch == null? new Intent(this, SearchActivity.class): switchToSearch;
-            startActivity(switchToSearch);
-            //finish();
+            if(switchToSearch == null){
+                switchToSearch = new Intent(this, SearchActivity.class);
+                startActivity(switchToSearch);
+
+
+            }
+            else{
+                startActivity(switchToSearch);
+                System.out.println("not new");
+            }
+
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
