@@ -17,6 +17,7 @@ public class InfoActivity extends AppCompatActivity  implements NavigationView.O
 
     private Intent switchToReminder;
     private Intent switchToSearch;
+    private Intent switchToInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +68,20 @@ public class InfoActivity extends AppCompatActivity  implements NavigationView.O
             }
 
         }
+
+        else if(id == R.id.nav_info){
+            if(switchToInfo == null){
+                switchToInfo = new Intent(this, InfoActivity.class);
+                startActivity(switchToInfo);
+
+            }
+            else{
+                startActivity(switchToInfo);
+                System.out.println("not new");
+            }
+
+        }
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

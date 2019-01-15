@@ -50,6 +50,7 @@ public class SearchActivity extends AppCompatActivity
     private MedikamentViewModel medikamentViewModel;
     private Intent switchToReminder;
     private Intent switchToSearch;
+    private Intent switchToInfo;
 
     private static SearchActivity instance;
     private TextView begruessungTextView;
@@ -251,6 +252,19 @@ public class SearchActivity extends AppCompatActivity
             }
             else{
                 startActivity(switchToSearch);
+                System.out.println("not new");
+            }
+
+        }
+
+        else if(id == R.id.nav_info){
+            if(switchToInfo == null){
+                switchToInfo = new Intent(this, InfoActivity.class);
+                startActivity(switchToInfo);
+
+            }
+            else{
+                startActivity(switchToInfo);
                 System.out.println("not new");
             }
 
