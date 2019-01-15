@@ -240,13 +240,13 @@ public class SearchActivity extends AppCompatActivity
                 startActivity(switchToReminder);
                 System.out.println("not new");
             }
+
         }
 
         else if(id == R.id.nav_search){
             if(switchToSearch == null){
                 switchToSearch = new Intent(this, SearchActivity.class);
                 startActivity(switchToSearch);
-
 
             }
             else{
@@ -255,6 +255,7 @@ public class SearchActivity extends AppCompatActivity
             }
 
         }
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
