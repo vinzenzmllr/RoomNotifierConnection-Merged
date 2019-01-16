@@ -181,7 +181,7 @@ public class SearchActivity extends AppCompatActivity
 
                 String[] a = line.split(cvsSplitBy);
 
-                Medikament medikament = new Medikament(a[2], a[6], a[15], a[13]);
+                Medikament medikament = new Medikament(a[2], a[6], a[16], a[13]);
 
                 medikamentList.add(medikament);
 
