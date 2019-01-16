@@ -121,44 +121,54 @@
             android:id="@+id/linAnwendung"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_below="@+id/linWirkstoff"
+            android:layout_gravity="center"
             android:layout_marginLeft="30dp"
+            android:layout_marginTop="15dp"
             android:layout_marginRight="30dp"
             android:layout_marginBottom="15dp"
+            android:layout_weight="0.3"
             android:orientation="horizontal"
-            android:layout_gravity="center"
-            android:layout_below="@+id/linWirkstoff"
-            android:layout_weight="0.3">
+            android:saveEnabled="true">
 
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
-                android:padding="5dp"
                 android:layout_gravity="center_horizontal"
-                android:src="@drawable/ic_anwendung"/>
+                android:padding="5dp"
+                android:src="@drawable/ic_anwendung" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginLeft="25dp">
+                android:layout_marginLeft="25dp"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/anwendungPlainText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:text="Anwendungsbereich"
-                    android:textColor="@android:color/darker_gray"/>
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@android:color/darker_gray" />
 
-                <TextView
-                    android:id="@+id/anwendungText"
+                <ScrollView
+                    android:id="@+id/SCROLLER_ID"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textColor="@android:color/white"
-                    />
+                    android:scrollbars="vertical"
+                    android:fillViewport="true">
+
+                    <TextView
+                        android:id="@+id/anwendungText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="horizontal"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@android:color/white" />
+
+                </ScrollView>
 
             </LinearLayout>
 
