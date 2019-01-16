@@ -23,9 +23,7 @@
             android:label="lucidus"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Activities.MedikamentActivity"
             android:parentActivityName=".Activities.SearchActivity" />
@@ -33,14 +31,19 @@
             android:name=".Activities.SearchActivity"
             android:configChanges="orientation"
             android:label="lucidus"
-            android:screenOrientation="portrait"
             android:launchMode="singleTop"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".Activities.InfoActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+
         </activity>
     </application>
 

@@ -46,6 +46,10 @@ public class ReminderActivity extends AppCompatActivity
 
     private ReminderViewModel reminderViewModel;
 
+    private Intent switchToReminder;
+    private Intent switchToSearch;
+    private Intent switchToInfo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,8 +72,11 @@ public class ReminderActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.navigation_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        switchToReminder = this.getIntent();
+        switchToSearch = new SearchActivity().getIntent();
 
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -95,14 +102,19 @@ public class ReminderActivity extends AppCompatActivity
 
             @Override
             public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
-                reminderViewModel.delete(adapter.getReminderat(viewHolder.getAdapterPosition()));
-                Intent cancelIntent = new Intent(ReminderActivity.this, AlertReceiver.class);
-                PendingIntent pendingMorningIntent = PendingIntent.getBroadcast(ReminderActivity.this, 1000+(int)adapter.getReminderat(viewHolder.getAdapterPosition()).getId(), cancelIntent, 0);
-                PendingIntent pendingNoonIntent = PendingIntent.getBroadcast(ReminderActivity.this, 2000+(int)adapter.getReminderat(viewHolder.getAdapterPosition()).getId(), cancelIntent, 0);
-                PendingIntent pendingEveningIntent = PendingIntent.getBroadcast(ReminderActivity.this, 3000+(int)adapter.getReminderat(viewHolder.getAdapterPosition()).getId(), cancelIntent, 0);
-                alarmManager.cancel(pendingMorningIntent);
-                alarmManager.cancel(pendingNoonIntent);
-                alarmManager.cancel(pendingEveningIntent);
+                try {
+                    reminderViewModel.delete(adapter.getReminderat(viewHolder.getAdapterPosition()));
+                    Intent cancelIntent = new Intent(ReminderActivity.this, AlertReceiver.class);
+                    PendingIntent pendingMorningIntent = PendingIntent.getBroadcast(ReminderActivity.this, 1000+(int)adapter.getReminderat(viewHolder.getAdapterPosition()).getId(), cancelIntent, 0);
+                    PendingIntent pendingNoonIntent = PendingIntent.getBroadcast(ReminderActivity.this, 2000+(int)adapter.getReminderat(viewHolder.getAdapterPosition()).getId(), cancelIntent, 0);
+                    PendingIntent pendingEveningIntent = PendingIntent.getBroadcast(ReminderActivity.this, 3000+(int)adapter.getReminderat(viewHolder.getAdapterPosition()).getId(), cancelIntent, 0);
+                    alarmManager.cancel(pendingMorningIntent);
+                    alarmManager.cancel(pendingNoonIntent);
+                    alarmManager.cancel(pendingEveningIntent);
+                }
+                catch (Exception e){
+
+                }
 
                 Toast.makeText(ReminderActivity.this, "Erinnerung gelöscht", Toast.LENGTH_SHORT).show();
             }
@@ -283,8 +295,6 @@ public class ReminderActivity extends AppCompatActivity
     }
 
 
-    Intent switchToReminder = null;
-    Intent switchToSearch = null;
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -294,17 +304,44 @@ public class ReminderActivity extends AppCompatActivity
 
 
         if (id == R.id.nav_reminder) {
-            switchToReminder = switchToReminder == null? new Intent(this, ReminderActivity.class): switchToReminder;
-            startActivity(switchToReminder);
-            //finish();
+            if(switchToReminder == null){
+                switchToReminder = new Intent(this, ReminderActivity.class);
+                startActivity(switchToReminder);
+
+            }
+            else{
+                startActivity(switchToReminder);
+                System.out.println("not new");
+            }
 
         }
 
         else if(id == R.id.nav_search){
-            switchToSearch = switchToSearch == null? new Intent(this, SearchActivity.class): switchToSearch;
-            startActivity(switchToSearch);
-            //finish();
+            if(switchToSearch == null){
+                switchToSearch = new Intent(this, SearchActivity.class);
+                startActivity(switchToSearch);
+
+            }
+            else{
+                startActivity(switchToSearch);
+                System.out.println("not new");
+            }
+
         }
+
+        else if(id == R.id.nav_info){
+            if(switchToInfo == null){
+                switchToInfo = new Intent(this, InfoActivity.class);
+                startActivity(switchToInfo);
+
+            }
+            else{
+                startActivity(switchToInfo);
+                System.out.println("not new");
+            }
+
+        }
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
