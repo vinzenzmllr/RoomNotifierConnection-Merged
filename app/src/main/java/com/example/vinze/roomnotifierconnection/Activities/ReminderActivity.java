@@ -232,7 +232,7 @@ public class ReminderActivity extends AppCompatActivity
         return true;
     }
 
-    @Override
+    /*@Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.delete_all_notes:
@@ -243,7 +243,7 @@ public class ReminderActivity extends AppCompatActivity
             default:
                 return super.onOptionsItemSelected(item);
         }
-    }
+    }*/
 
 
     public void start(Calendar calendar, int setCode, String medicationName) {
@@ -267,7 +267,7 @@ public class ReminderActivity extends AppCompatActivity
             alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
         }
 
-        Toast.makeText(this, "Alarm Set!" + " " + id, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "Alarm Set!" + " " + id, Toast.LENGTH_SHORT).show();
     }
 
     public int checkHour(int hour){
