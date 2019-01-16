@@ -148,9 +148,12 @@ public class AddEditReminderActivity extends AppCompatActivity {
 
     public boolean checkTime(String timeToCheck){
         if(timeToCheck.length() < 5 || timeToCheck.length() > 5 || Integer.parseInt(timeToCheck.substring(0,2)) >= 24
-                || Integer.parseInt(timeToCheck.substring(3,5)) >= 60 || timeToCheck.length() == 0)
+                || Integer.parseInt(timeToCheck.substring(3,5)) >= 60 || timeToCheck.length() == 0 || !(":").equals(timeToCheck.substring(2,3)))
         {
+            System.out.println("******************************************************************");
+            System.out.println(timeToCheck.substring(2,3));
             return false;
+
         }
 
         return true;
