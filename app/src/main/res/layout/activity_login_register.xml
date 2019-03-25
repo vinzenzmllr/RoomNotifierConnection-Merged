@@ -45,6 +45,16 @@
                 android:text="Registrieren"
                 android:textColor="@android:color/black"
                 android:textSize="18sp"
+                />
+
+            <TextView
+                android:id="@+id/tv_guest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="weiter ohne Login"
+                android:textColor="@drawable/text_onclick"
+                android:layout_marginTop="15dp"
+                android:onClick="onClickGuest"
                 android:layout_marginBottom="40dp"/>
 
         </LinearLayout>

@@ -7,7 +7,7 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".Activities.SearchActivity"
     tools:showIn="@layout/app_bar_search"
-    android:background="@color/colorPrimaryDark">
+    android:background="@drawable/gradient">
 
     <RelativeLayout
         android:id="@+id/relativeLayoutMain"

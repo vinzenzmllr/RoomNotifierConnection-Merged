@@ -20,6 +20,7 @@ public class LoginRegisterActivity extends AppCompatActivity {
         loadComponents();
     }
 
+   
 
     public void loadComponents(){
         bt_login = findViewById(R.id.bt_login);
@@ -34,5 +35,11 @@ public class LoginRegisterActivity extends AppCompatActivity {
     public void onClickRegsiter(View v){
         Intent swicthToRegister = new Intent(this, RegisterActivity.class);
         startActivity(swicthToRegister);
+    }
+
+    public void onClickGuest(View v){
+        Intent switchToSearch = new Intent(this, SearchActivity.class);
+        startActivity(switchToSearch);
+
     }
 }
