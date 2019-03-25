@@ -13,7 +13,8 @@
         android:orientation="vertical"
         android:layout_marginBottom="15dp"
         android:layout_gravity="center"
-        android:layout_marginTop="15dp">
+        android:layout_marginTop="15dp"
+        >
 
         <LinearLayout
             android:id="@+id/linName"
@@ -48,14 +49,22 @@
                     android:text="Name"
                     android:textColor="@android:color/darker_gray"/>
 
-                <TextView
-                    android:id="@+id/nameText"
+                <ScrollView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textColor="@android:color/white"
+                    android:scrollbars="vertical"
+                    android:fillViewport="true">
 
-                    />
+                    <TextView
+                        android:id="@+id/nameText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@android:color/white"
+
+                        />
+
+                </ScrollView>
 
             </LinearLayout>
 
@@ -100,13 +109,21 @@
                     android:text="Wirkstoff"
                     android:textColor="@android:color/darker_gray"/>
 
-                <TextView
-                    android:id="@+id/wirkstoffText"
+                <ScrollView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textColor="@android:color/white"
-                    />
+                    android:scrollbars="vertical"
+                    android:fillViewport="true">
+
+                    <TextView
+                        android:id="@+id/wirkstoffText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@android:color/white"
+                        />
+
+                </ScrollView>
 
             </LinearLayout>
 
@@ -127,9 +144,7 @@
             android:layout_marginTop="15dp"
             android:layout_marginRight="30dp"
             android:layout_marginBottom="15dp"
-            android:layout_weight="0.3"
-            android:orientation="horizontal"
-            android:saveEnabled="true">
+            android:layout_weight="0.3">
 
             <ImageView
                 android:layout_width="50dp"
@@ -212,13 +227,21 @@
                     android:text="Verschreibungspflichtig"
                     android:textColor="@android:color/darker_gray"/>
 
-                <TextView
-                    android:id="@+id/verschreibungsText"
+                <ScrollView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textColor="@android:color/white"
-                    />
+                    android:scrollbars="vertical"
+                    android:fillViewport="true">
+
+                    <TextView
+                        android:id="@+id/verschreibungsText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@android:color/white"
+                        />
+
+                </ScrollView>
 
             </LinearLayout>
 
