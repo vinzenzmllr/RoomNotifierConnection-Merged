@@ -1,7 +1,6 @@
 package com.example.vinze.roomnotifierconnection.Activities;
 
 import android.content.Intent;
-import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -13,18 +12,17 @@ import android.view.MenuItem;
 
 import com.example.vinze.roomnotifierconnection.R;
 
-public class InfoActivity extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener {
+public class UserDataActivity extends AppCompatActivity
+        implements NavigationView.OnNavigationItemSelectedListener {
 
     private Intent switchToReminder;
     private Intent switchToSearch;
     private Intent switchToInfo;
     private Intent switchToUserData;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_info);
+        setContentView(R.layout.activity_user_data);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -38,7 +36,6 @@ public class InfoActivity extends AppCompatActivity  implements NavigationView.O
         navigationView.setNavigationItemSelectedListener(this);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
@@ -102,4 +99,5 @@ public class InfoActivity extends AppCompatActivity  implements NavigationView.O
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
 }

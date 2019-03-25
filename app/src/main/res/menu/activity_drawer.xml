@@ -18,6 +18,10 @@
             android:id="@+id/nav_info"
             android:icon="@drawable/ic_info"
             android:title="Information" />
+        <item
+            android:id="@+id/nav_userdata"
+            android:icon="@drawable/ic_info"
+            android:title="Benutzer Daten" />
 
     </group>
 

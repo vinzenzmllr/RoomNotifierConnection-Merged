@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.LoginActivity">
+
+
+    <LinearLayout
+        android:background="@color/colorPrimaryDark"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/tv_usernameInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Username"
+            android:singleLine="true"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white"
+            android:textSize="24sp"
+            app:layout_constraintHorizontal_bias="1.0" />
+
+        <EditText
+            android:id="@+id/tv_passwordInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Passwort"
+            android:singleLine="true"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white"
+            android:textSize="24sp"
+            android:inputType="textPassword"
+            />
+
+        <Button
+            android:id="@+id/bt_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_round_red"
+            android:onClick="onClick"
+            android:text="Login"
+            android:textColor="@color/colorAccent"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tv_guest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Als Gast fortfahren"
+            android:textColor="@android:color/darker_gray"
+            android:layout_marginTop="10dp"
+            android:onClick="onClickGuest"/>
+
+
+
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

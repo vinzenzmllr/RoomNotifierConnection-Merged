@@ -41,7 +41,6 @@ public class ReminderActivity extends AppCompatActivity
     public static final int EDIT_REMINDER_REQUEST = 2;
 
     public AlarmManager alarmManager;
-
     public long id;
 
     private ReminderViewModel reminderViewModel;
@@ -49,6 +48,7 @@ public class ReminderActivity extends AppCompatActivity
     private Intent switchToReminder;
     private Intent switchToSearch;
     private Intent switchToInfo;
+    private Intent switchToUserData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -150,6 +150,8 @@ public class ReminderActivity extends AppCompatActivity
             reminderViewModel.insert(reminder);
             id = reminder.getId();
             System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+
+
 
             if(!(" ").equals(morningTime))
             {
@@ -337,6 +339,19 @@ public class ReminderActivity extends AppCompatActivity
             }
             else{
                 startActivity(switchToInfo);
+                System.out.println("not new");
+            }
+
+        }
+
+        else if(id == R.id.nav_userdata){
+            if(switchToUserData == null){
+                switchToUserData = new Intent(this, UserDataActivity.class);
+                startActivity(switchToUserData);
+
+            }
+            else{
+                startActivity(switchToUserData);
                 System.out.println("not new");
             }
 
