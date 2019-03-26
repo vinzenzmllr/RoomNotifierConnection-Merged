@@ -8,56 +8,59 @@
 
 
     <LinearLayout
-        android:background="@color/colorPrimaryDark"
+        android:background="@drawable/gradient"
         android:orientation="vertical"
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <EditText
+            android:textAlignment="center"
             android:id="@+id/tv_usernameInput"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="300dp"
+            android:layout_height="30dp"
             android:hint="Username"
             android:singleLine="true"
-            android:textColor="@android:color/white"
-            android:textColorHint="@android:color/white"
-            android:textSize="24sp"
-            app:layout_constraintHorizontal_bias="1.0" />
+            android:background="@drawable/text_input"
+            android:textColor="#646a72"
+            android:textColorHint="#646a72"
+            android:textSize="18sp"
+            app:layout_constraintHorizontal_bias="1.0"
+            android:layout_marginBottom="5dp"/>
 
         <EditText
+            android:textAlignment="center"
             android:id="@+id/tv_passwordInput"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="300dp"
+            android:layout_height="30dp"
             android:hint="Passwort"
             android:singleLine="true"
-            android:textColor="@android:color/white"
-            android:textColorHint="@android:color/white"
-            android:textSize="24sp"
+            android:background="@drawable/text_input"
+            android:textColor="#646a72"
+            android:textColorHint="#646a72"
+            android:textSize="18sp"
             android:inputType="textPassword"
+            android:layout_marginBottom="20dp"
             />
 
         <Button
             android:id="@+id/bt_login"
-            android:layout_width="wrap_content"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:background="@drawable/button_round_red"
             android:onClick="onClick"
-            android:text="Login"
-            android:textColor="@color/colorAccent"
-            android:textSize="24sp" />
+            android:text="Anmelden"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/tv_guest"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Als Gast fortfahren"
-            android:textColor="@android:color/darker_gray"
+            android:textColor="@drawable/text_onclick"
             android:layout_marginTop="10dp"
             android:onClick="onClickGuest"/>
-
-
-
 
     </LinearLayout>
 
