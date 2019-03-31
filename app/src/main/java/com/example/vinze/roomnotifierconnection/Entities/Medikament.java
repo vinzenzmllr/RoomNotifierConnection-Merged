@@ -1,7 +1,7 @@
 package com.example.vinze.roomnotifierconnection.Entities;
 
-import android.arch.persistence.room.Entity;
-import android.arch.persistence.room.PrimaryKey;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
 @Entity(tableName = "medikament_table")
 public class Medikament {

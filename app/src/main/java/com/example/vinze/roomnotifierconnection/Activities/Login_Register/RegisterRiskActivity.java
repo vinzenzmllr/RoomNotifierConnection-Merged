@@ -1,6 +1,6 @@
 package com.example.vinze.roomnotifierconnection.Activities.Login_Register;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.vinze.roomnotifierconnection.R;

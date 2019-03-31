@@ -1,7 +1,7 @@
 package com.example.vinze.roomnotifierconnection.Activities.Login_Register;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
@@ -15,7 +15,7 @@ public class RegisterUPActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register_up);
     }
 
-    public void OnClickUserData(View v){
+    public void onClickUserData(View v){
         Intent switchToUserData = new Intent(this,RegisterDataActivity.class);
         startActivity(switchToUserData);
     }

@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.Login_Register.RegisterDataActivity">
+    tools:context=".Activities.Login_Register.RegisterDataActivity"
+    android:background="@drawable/gradient">
 
 
     <LinearLayout
-        android:background="@drawable/gradient"
+
         android:orientation="vertical"
         android:gravity="top"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
 
         <TextView
             android:layout_width="match_parent"
@@ -26,42 +27,78 @@
             android:layout_marginTop="40dp"
             />
 
-        <android.support.design.chip.ChipGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            
-            <com.google.android.material.chip.Chip
-            android:id="@+id/chip4"
-            style="@style/Widget.MaterialComponents.Chip.Choice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="iwas"
-
-                />
-            
-        </android.support.design.chip.ChipGroup>
-
-
         <LinearLayout
+            android:layout_marginTop="40dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center">
+            android:gravity="center"
+            android:layout_gravity="center"
+            >
 
-            <Button
-                android:id="@+id/bt_toUserData"
-                android:layout_width="300dp"
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroup"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/button_round_red"
-                android:onClick="onClickRisk"
-                android:text="Weiter"
-                android:textColor="@android:color/white"
-                android:textSize="18sp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
-                />
+
+                >
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/c_diabetes"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Diabetes"
+                    android:backgroundTint="#99FFFFFF"
+                    />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/c_hsm"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Herzschrittmacher"
+                    android:backgroundTint="#99FFFFFF"/>
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/c_aids"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Aids"
+                    android:backgroundTint="#99FFFFFF"/>
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/c_thrombose"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Thrombosegefährdet"
+                    android:backgroundTint="#99FFFFFF"/>
+
+
+            </com.google.android.material.chip.ChipGroup>
 
         </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center|bottom"
+        tools:ignore="MissingConstraints">
+
+        <Button
+            android:id="@+id/bt_toUserData"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_round_red"
+            android:onClick="onClickRisk"
+            android:text="Fertig"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:layout_marginBottom="20dp"
+            />
 
     </LinearLayout>
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

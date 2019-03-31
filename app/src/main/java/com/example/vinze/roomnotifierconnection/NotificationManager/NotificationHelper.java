@@ -7,12 +7,9 @@ import android.app.NotificationManager;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.os.Build;
-import android.support.v4.app.NotificationCompat;
+import androidx.core.app.NotificationCompat;
 
 import com.example.vinze.roomnotifierconnection.R;
-import com.example.vinze.roomnotifierconnection.R;
-
-import java.util.Locale;
 
 public class NotificationHelper extends ContextWrapper{
     public static final String channel1ID = "CHANNEL1_ID";

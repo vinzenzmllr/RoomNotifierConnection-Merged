@@ -1,18 +1,10 @@
 package com.example.vinze.roomnotifierconnection.NotificationManager;
 
-import android.app.Activity;
-import android.app.AlarmManager;
-import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Build;
-import android.support.v4.app.NotificationCompat;
-import com.example.vinze.roomnotifierconnection.*;
-import com.example.vinze.roomnotifierconnection.Activities.AddEditReminderActivity;
 
-
-import java.util.concurrent.TimeUnit;
+import androidx.core.app.NotificationCompat;
 
 
 public class AlertReceiver extends BroadcastReceiver {

@@ -1,7 +1,7 @@
 package com.example.vinze.roomnotifierconnection.Repositories;
 
 import android.app.Application;
-import android.arch.lifecycle.LiveData;
+import androidx.lifecycle.LiveData;
 import android.os.AsyncTask;
 
 import com.example.vinze.roomnotifierconnection.DAOs.ReminderDAO;
@@ -10,7 +10,6 @@ import com.example.vinze.roomnotifierconnection.Databases.ReminderDatabase;
 
 import java.util.List;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeUnit;
 
 public class ReminderRepository {
 

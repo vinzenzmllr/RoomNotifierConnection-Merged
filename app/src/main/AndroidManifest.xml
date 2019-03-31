@@ -10,8 +10,12 @@
         android:label="lucidus"
         android:roundIcon="@drawable/lucidus"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".Activities.Login_Register.RegisterRiskActivity"></activity>
+        android:theme="@style/AppTheme"
+        >
+        <activity
+            android:name=".Activities.Login_Register.RegisterRiskActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".Activities.Login_Register.RegisterDataActivity"
             android:screenOrientation="portrait"

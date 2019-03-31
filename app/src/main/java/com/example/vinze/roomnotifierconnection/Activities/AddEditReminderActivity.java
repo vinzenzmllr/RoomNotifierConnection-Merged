@@ -1,11 +1,8 @@
 package com.example.vinze.roomnotifierconnection.Activities;
 
-import android.app.AlarmManager;
-import android.app.PendingIntent;
-import android.content.Context;
 import android.content.Intent;
-import android.os.SystemClock;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -15,13 +12,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.vinze.roomnotifierconnection.NotificationManager.AlertReceiver;
 import com.example.vinze.roomnotifierconnection.R;
-
-import java.sql.Time;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.EventListener;
 
 public class AddEditReminderActivity extends AppCompatActivity {
 
