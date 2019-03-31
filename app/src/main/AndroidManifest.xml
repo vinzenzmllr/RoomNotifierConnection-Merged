@@ -11,24 +11,29 @@
         android:roundIcon="@drawable/lucidus"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.RegisterActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name=".Activities.LoginRegisterActivity"
-            android:theme="@style/AppTheme.NoActionBar"
+        <activity android:name=".Activities.Login_Register.RegisterRiskActivity"></activity>
+        <activity
+            android:name=".Activities.Login_Register.RegisterDataActivity"
             android:screenOrientation="portrait"
-            >
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".Activities.Login_Register.RegisterUPActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activities.Login_Register.LoginRegisterActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activities.LoginActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait">
-
-        </activity>
+        <activity
+            android:name=".Activities.Login_Register.LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
 
         <receiver android:name=".NotificationManager.AlertReceiver" />
 

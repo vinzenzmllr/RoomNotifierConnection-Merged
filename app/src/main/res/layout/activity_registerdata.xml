@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.Login_Register.RegisterDataActivity">
+
+
+    <LinearLayout
+        android:background="@drawable/gradient"
+        android:orientation="vertical"
+        android:gravity="top"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:text="Konto erstellen"
+            android:textSize="40dp"
+            android:textStyle="bold"
+            android:layout_marginTop="40dp"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_marginTop="40dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Vorname"
+                    android:textColor="@android:color/white"
+                    android:textSize="22dp"
+                    android:textStyle="bold"
+                    />
+
+                <EditText
+                    android:layout_gravity="left"
+                    android:id="@+id/tv_vornameInput"
+                    android:layout_width="300dp"
+                    android:layout_height="30dp"
+                    android:singleLine="true"
+                    android:background="@drawable/text_input"
+                    android:textColor="#646a72"
+                    android:textColorHint="#646a72"
+                    android:textSize="18sp"
+                    android:inputType="textPassword"
+                    android:layout_marginBottom="5dp"
+                    />
+
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nachname"
+                    android:textColor="@android:color/white"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    />
+
+                <EditText
+                    android:layout_gravity="left"
+                    android:id="@+id/tv_nachnameInput"
+                    android:layout_width="300dp"
+                    android:layout_height="30dp"
+                    android:singleLine="true"
+                    android:background="@drawable/text_input"
+                    android:textColor="#646a72"
+                    android:textSize="18sp"
+                    android:inputType="textPassword"
+                    android:layout_marginBottom="5dp"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Geburtstag"
+                    android:textColor="@android:color/white"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    />
+
+                <EditText
+                    android:layout_gravity="left"
+                    android:id="@+id/tv_passwordInput"
+                    android:layout_width="300dp"
+                    android:layout_height="30dp"
+                    android:singleLine="true"
+                    android:background="@drawable/text_input"
+                    android:textColor="#646a72"
+                    android:textSize="18sp"
+                    android:inputType="textPassword"
+                    android:layout_marginBottom="5dp"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Größe"
+                    android:textColor="@android:color/white"
+                    android:textSize="22dp"
+                    android:textStyle="bold"
+                    />
+
+                <EditText
+                    android:layout_gravity="left"
+                    android:id="@+id/tv_groesseInput"
+                    android:layout_width="300dp"
+                    android:layout_height="30dp"
+                    android:singleLine="true"
+                    android:background="@drawable/text_input"
+                    android:textColor="#646a72"
+                    android:textSize="18sp"
+                    android:inputType="textPassword"
+                    android:layout_marginBottom="5dp"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Gewicht"
+                    android:textColor="@android:color/white"
+                    android:textSize="22dp"
+                    android:textStyle="bold"
+                    />
+
+                <EditText
+                    android:layout_gravity="left"
+                    android:id="@+id/tv_gewichtInput"
+                    android:layout_width="300dp"
+                    android:layout_height="30dp"
+                    android:singleLine="true"
+                    android:background="@drawable/text_input"
+                    android:textColor="#646a72"
+                    android:textSize="18sp"
+                    android:inputType="textPassword"
+                    android:layout_marginBottom="5dp"
+                    />
+
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioGroup
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <RadioButton
+                        android:text="Weiblich"
+                        android:textSize="22sp"
+                        android:textColor="@android:color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:layout_marginRight="30dp"
+                        android:buttonTint="@android:color/white"
+                        />
+
+                    <RadioButton
+                        android:text="Männlich"
+                        android:textSize="22sp"
+                        android:textColor="@android:color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:buttonTint="@android:color/white"
+                        />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/bt_toUserData"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_round_red"
+                android:onClick="onClickRisk"
+                android:text="Weiter"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

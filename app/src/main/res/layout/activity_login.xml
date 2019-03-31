@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.LoginActivity">
+    tools:context=".Activities.Login_Register.LoginActivity">
 
 
     <LinearLayout
@@ -18,7 +18,7 @@
             android:textAlignment="center"
             android:id="@+id/tv_usernameInput"
             android:layout_width="300dp"
-            android:layout_height="30dp"
+            android:layout_height="33dp"
             android:hint="Username"
             android:singleLine="true"
             android:background="@drawable/text_input"
@@ -32,7 +32,7 @@
             android:textAlignment="center"
             android:id="@+id/tv_passwordInput"
             android:layout_width="300dp"
-            android:layout_height="30dp"
+            android:layout_height="33dp"
             android:hint="Passwort"
             android:singleLine="true"
             android:background="@drawable/text_input"

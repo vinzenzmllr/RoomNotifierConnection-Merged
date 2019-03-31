@@ -1,4 +1,4 @@
-package com.example.vinze.roomnotifierconnection.Activities;
+package com.example.vinze.roomnotifierconnection.Activities.Login_Register;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +9,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.vinze.roomnotifierconnection.Activities.SearchActivity;
 import com.example.vinze.roomnotifierconnection.R;
 
 public class LoginActivity extends AppCompatActivity {

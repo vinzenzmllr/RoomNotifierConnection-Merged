@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.RegisterActivity">
+    tools:context=".Activities.Login_Register.RegisterUPActivity">
 
 
     <LinearLayout
@@ -51,16 +51,18 @@
                     />
 
                 <EditText
-                    android:gravity="left"
+                    android:layout_gravity="left"
                     android:id="@+id/tv_usernameInput"
                     android:layout_width="300dp"
-                    android:layout_height="30dp"
+                    android:layout_height="33dp"
                     android:singleLine="true"
                     android:background="@drawable/text_input"
                     android:textColor="#646a72"
+                    android:textColorHint="#646a72"
                     android:textSize="18sp"
-                    app:layout_constraintHorizontal_bias="1.0"
-                    android:layout_marginBottom="5dp"/>
+                    android:inputType="textPassword"
+                    android:layout_marginBottom="5dp"
+                    />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -80,10 +82,10 @@
                     />
 
                 <EditText
-                    android:gravity="left"
+                    android:layout_gravity="left"
                     android:id="@+id/tv_passwordInput"
                     android:layout_width="300dp"
-                    android:layout_height="30dp"
+                    android:layout_height="33dp"
                     android:singleLine="true"
                     android:background="@drawable/text_input"
                     android:textColor="#646a72"
