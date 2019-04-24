@@ -37,7 +37,7 @@
 
             <com.google.android.material.chip.ChipGroup
                 android:id="@+id/chipGroup"
-                android:layout_width="wrap_content"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
 
                 >
@@ -59,13 +59,6 @@
                     android:text="Herzschrittmacher"
                     android:backgroundTint="#99FFFFFF"/>
 
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/c_aids"
-                    style="@style/Widget.MaterialComponents.Chip.Filter"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Aids"
-                    android:backgroundTint="#99FFFFFF"/>
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/c_thrombose"
@@ -75,6 +68,21 @@
                     android:text="Thrombosegefährdet"
                     android:backgroundTint="#99FFFFFF"/>
 
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/c_Bluthochdruck"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bluthochdruck"
+                    android:backgroundTint="#99FFFFFF"/>
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/c_Blutniederdruck"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Blutniederdruck"
+                    android:backgroundTint="#99FFFFFF"/>
 
             </com.google.android.material.chip.ChipGroup>
 
@@ -88,7 +96,7 @@
         tools:ignore="MissingConstraints">
 
         <Button
-            android:id="@+id/bt_toUserData"
+            android:id="@+id/bt_createUser"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:background="@drawable/button_round_red"

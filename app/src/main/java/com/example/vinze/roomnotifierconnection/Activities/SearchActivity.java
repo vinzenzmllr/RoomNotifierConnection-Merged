@@ -2,6 +2,8 @@ package com.example.vinze.roomnotifierconnection.Activities;
 
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+
+import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
@@ -50,7 +52,10 @@ public class SearchActivity extends AppCompatActivity
 
     private static SearchActivity instance;
     private TextView begruessungTextView;
+    private EditText suchText;
+    private RecyclerView recyclerView;
 
+    private ObjectAnimator objectAnimator;
     final MedikamentAdapter adapter = new MedikamentAdapter();
 
     @Override
@@ -65,7 +70,9 @@ public class SearchActivity extends AppCompatActivity
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+        suchText = findViewById(R.id.searchText);
 
+        suchText.clearFocus();
         NavigationView navigationView = (NavigationView) findViewById(R.id.navigation_view);
         navigationView.setNavigationItemSelectedListener(this);
 
@@ -77,7 +84,7 @@ public class SearchActivity extends AppCompatActivity
 
         // ----------------------------------------------------------------
 
-        final RecyclerView recyclerView = findViewById(R.id.recycler_view);
+        recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
 
@@ -98,7 +105,7 @@ public class SearchActivity extends AppCompatActivity
 
         // ----------------------------------------------------------------
 
-        final EditText suchText = findViewById(R.id.searchText);
+
 
         suchText.addTextChangedListener(new TextWatcher() {
             @Override
@@ -112,6 +119,7 @@ public class SearchActivity extends AppCompatActivity
                     adapter.getFilter().filter(s.toString());
                     recyclerView.setVisibility(View.INVISIBLE);
                     begruessungTextView.setVisibility(View.INVISIBLE);
+
                 } else {
                     adapter.getFilter().filter(s.toString());
                     recyclerView.setVisibility(View.VISIBLE);
@@ -219,6 +227,11 @@ public class SearchActivity extends AppCompatActivity
         }
     }
 
+    public void onClickSearch(View v){
+        begruessungTextView.setVisibility(View.INVISIBLE);
+        objectAnimator = ObjectAnimator.ofFloat(suchText, "translationY", -560f);
+        objectAnimator.start();
+    }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override

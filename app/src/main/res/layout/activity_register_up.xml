@@ -21,7 +21,7 @@
             android:textAlignment="center"
             android:textColor="@android:color/white"
             android:text="Konto erstellen"
-            android:textSize="40dp"
+            android:textSize="32dp"
             android:textStyle="bold"
             android:layout_marginTop="40dp"
             />
@@ -34,7 +34,7 @@
             android:gravity="center">
 
             <LinearLayout
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="20dp"
                 android:orientation="vertical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -46,30 +46,31 @@
                     android:layout_height="wrap_content"
                     android:text="Username"
                     android:textColor="@android:color/white"
-                    android:textSize="24dp"
+                    android:textSize="21dp"
                     android:textStyle="bold"
                     />
 
                 <EditText
                     android:layout_gravity="left"
-                    android:id="@+id/tv_usernameInput"
+                    android:id="@+id/et_usernameInput"
                     android:layout_width="300dp"
                     android:layout_height="33dp"
                     android:singleLine="true"
                     android:background="@drawable/text_input"
                     android:textColor="#646a72"
-                    android:textColorHint="#646a72"
                     android:textSize="18sp"
-                    android:inputType="textPassword"
+                    android:inputType="text"
                     android:layout_marginBottom="5dp"
                     />
 
                 <TextView
+                    android:id="@+id/tv_usernameDescription"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Dieser Name wird später fürs Anmelden verwendet"
                     android:lines="2"
                     android:textColor="@android:color/white"
+                    android:layout_marginBottom="20dp"
                     />
 
                 <TextView
@@ -77,13 +78,13 @@
                     android:layout_height="wrap_content"
                     android:text="Passwort"
                     android:textColor="@android:color/white"
-                    android:textSize="24dp"
+                    android:textSize="21dp"
                     android:textStyle="bold"
                     />
 
                 <EditText
                     android:layout_gravity="left"
-                    android:id="@+id/tv_passwordInput"
+                    android:id="@+id/et_passwordInput"
                     android:layout_width="300dp"
                     android:layout_height="33dp"
                     android:singleLine="true"
@@ -95,6 +96,7 @@
                     />
 
                 <TextView
+                    android:id="@+id/tv_passwordDescription"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Mindestend 8 Zeichen"

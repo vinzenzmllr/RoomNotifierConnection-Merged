@@ -8,54 +8,89 @@
     >
 
 
-    <LinearLayout
 
+
+    <LinearLayout
         android:background="@drawable/gradient"
         android:orientation="vertical"
         android:gravity="bottom"
-        android:foregroundGravity=""
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/gradient"
+            android:gravity="center"
             android:orientation="vertical"
-            android:gravity="center">
+            android:layout_marginBottom="130dp">
 
+            <EditText
+                android:id="@+id/tv_usernameInput"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/text_input"
+                android:hint="Username"
+                android:singleLine="true"
+                android:textAlignment="center"
+                android:textColor="#646a72"
+                android:textColorHint="#646a72"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/tv_passwordInput"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/text_input"
+                android:hint="Passwort"
+                android:inputType="textPassword"
+                android:singleLine="true"
+                android:textAlignment="center"
+                android:textColor="#646a72"
+                android:textColorHint="#646a72"
+                android:textSize="18sp" />
 
             <Button
                 android:id="@+id/bt_login"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/button_round_red"
-                android:onClick="onClickLogin"
+                android:onClick="onClick"
                 android:text="Anmelden"
                 android:textColor="@android:color/white"
-                android:textSize="18sp"
-                />
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:gravity="center"
+            android:orientation="vertical">
 
             <Button
-                android:layout_marginTop="20dp"
                 android:id="@+id/bt_register"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
                 android:background="@drawable/button_round_white"
                 android:onClick="onClickRegsiter"
                 android:text="Registrieren"
                 android:textColor="@android:color/black"
-                android:textSize="18sp"
-                />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/tv_guest"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="weiter ohne Login"
-                android:textColor="@drawable/text_onclick"
                 android:layout_marginTop="15dp"
+                android:layout_marginBottom="40dp"
                 android:onClick="onClickGuest"
-                android:layout_marginBottom="40dp"/>
+                android:text="weiter ohne Login"
+                android:textColor="@drawable/text_onclick" />
 
         </LinearLayout>
 

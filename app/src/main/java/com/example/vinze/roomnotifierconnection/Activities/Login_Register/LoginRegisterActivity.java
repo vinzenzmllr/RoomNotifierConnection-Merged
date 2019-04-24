@@ -28,9 +28,9 @@ public class LoginRegisterActivity extends AppCompatActivity {
         bt_register = findViewById(R.id.bt_register);
     }
 
-    public void onClickLogin(View v){
-        Intent swicthToLogin = new Intent(this, LoginActivity.class);
-        startActivity(swicthToLogin);
+    public void onClick(View v){
+        Intent switchToSearch = new Intent(this, SearchActivity.class);
+        startActivity(switchToSearch);
     }
 
     public void onClickRegsiter(View v){

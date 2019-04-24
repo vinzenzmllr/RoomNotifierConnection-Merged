@@ -42,6 +42,7 @@
         <receiver android:name=".NotificationManager.AlertReceiver" />
 
         <activity
+            android:label="Erinnerungen bearbeiten"
             android:name=".Activities.AddEditReminderActivity"
             android:configChanges="orientation"
             android:parentActivityName=".Activities.ReminderActivity"
@@ -49,7 +50,7 @@
         <activity
             android:name=".Activities.ReminderActivity"
             android:configChanges="orientation"
-            android:label="lucidus"
+            android:label="Erinnerungen"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -59,7 +60,7 @@
         <activity
             android:name=".Activities.SearchActivity"
             android:configChanges="orientation"
-            android:label="lucidus"
+            android:label="Bibliothek"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -69,7 +70,7 @@
         <activity
             android:name=".Activities.UserDataActivity"
             android:configChanges="orientation"
-            android:label="lucidus"
+            android:label="Deine Daten"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />

@@ -7,7 +7,8 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".Activities.SearchActivity"
     tools:showIn="@layout/app_bar_search"
-    android:background="@drawable/gradient">
+    android:background="@drawable/gradient"
+    >
 
     <RelativeLayout
         android:id="@+id/relativeLayoutMain"
@@ -15,36 +16,42 @@
         android:layout_height="wrap_content"
         >
 
-        <EditText
-            android:id="@+id/searchText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:hint="Suchen..."
-            android:maxLines="0"
-            android:singleLine="true"
-            android:textColor="@android:color/white"
-            tools:hint="Suchen..."
-            android:textColorHint="@android:color/white"/>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/searchText"
-            tools:listitem="@layout/medikament_item"
-            />
-
         <TextView
             android:id="@+id/begruesungText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="100dp"
-            android:layout_marginRight="30dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="15dp"
+            android:lineSpacingExtra="2dp"
             android:text="Willkommen bei lucidus!\nGeben sie einen Medikamentennamen oder Wirkstoff ein."
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="@android:color/white" />
+
+        <EditText
+            android:background="@drawable/text_input"
+            android:id="@+id/searchText"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_margin="8dp"
+            android:hint="Suchen..."
+            android:maxLines="0"
+            android:singleLine="true"
+            android:onClick="onClickSearch"
+            android:layout_below="@+id/begruesungText"
+            android:textColor="@android:color/black"
+            android:textColorHint="@android:color/darker_gray"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/medikament_item"
+            android:layout_marginBottom="0dp"
+            android:layout_marginTop="55dp"
+            />
+
+
 
     </RelativeLayout>
 

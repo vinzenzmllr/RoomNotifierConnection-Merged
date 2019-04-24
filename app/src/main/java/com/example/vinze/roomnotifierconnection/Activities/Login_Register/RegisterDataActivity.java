@@ -4,12 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.vinze.roomnotifierconnection.R;
+import com.example.vinze.roomnotifierconnection.UserProcessor.User;
+import com.example.vinze.roomnotifierconnection.UserProcessor.UserBuilder;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -17,25 +22,32 @@ import java.util.Locale;
 
 public class RegisterDataActivity extends AppCompatActivity {
 
+    final Calendar myCalendar = Calendar.getInstance();
     public EditText et_birthday;
+    public EditText et_groesse;
+    public EditText et_gewicht;
+    public EditText et_geschlecht;
+
+    public TextView tv_birthdateDescription;
+    public TextView tv_heightDescription;
+    public TextView tv_weightDescription;
+    public TextView tv_genderDescription;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registerdata);
-        et_birthday  = findViewById(R.id.et_birthdayInput);
+        loadComponents();
         et_birthday.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                // TODO Auto-generated method stub
                 new DatePickerDialog(RegisterDataActivity.this, date, myCalendar
                         .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
                         myCalendar.get(Calendar.DAY_OF_MONTH)).show();
             }
         });
     }
-    final Calendar myCalendar = Calendar.getInstance();
 
 
 
@@ -53,7 +65,6 @@ public class RegisterDataActivity extends AppCompatActivity {
         @Override
         public void onDateSet(DatePicker view, int year, int monthOfYear,
                               int dayOfMonth) {
-            // TODO Auto-generated method stub
             myCalendar.set(Calendar.YEAR, year);
             myCalendar.set(Calendar.MONTH, monthOfYear);
             myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
@@ -62,10 +73,61 @@ public class RegisterDataActivity extends AppCompatActivity {
 
     };
 
+    public void handleError(int errorFlag){
+        if(errorFlag == 1){
+            tv_birthdateDescription.setTextColor(Color.parseColor("#ef403d"));
+            tv_birthdateDescription.setText("Bitte geben Sie ein Geburtsdatum ein");
+        }
+        else if(errorFlag == 2){
+            tv_heightDescription.setTextColor(Color.parseColor("#ef403d"));
+            tv_heightDescription.setText("Bitte geben Sie Ihre Größe ein");
+        }
+        else if(errorFlag == 3){
+            tv_weightDescription.setTextColor(Color.parseColor("#ef403d"));
+            tv_weightDescription.setText("Bitte geben Sie Ihr Gewicht ein");
+        }
+        else if(errorFlag == 4){
+            tv_genderDescription.setTextColor(Color.parseColor("#ef403d"));
+            tv_genderDescription.setText("Bitte geben Sie Ihr Geschlecht an");
+        }
+    }
+
 
 
     public void onClickRisk(View v){
-        Intent switchToRisk = new Intent(this, RegisterRiskActivity.class);
-        startActivity(switchToRisk);
+        if(et_birthday.getText().toString().matches("")){
+            handleError(1);
+        }
+        else if(et_groesse.getText().toString().matches("")){
+            handleError(2);
+        }
+        else if(et_gewicht.getText().toString().matches("")){
+            handleError(3);
+        }
+        else if(et_geschlecht.getText().toString().matches("")){
+            handleError(4);
+        }
+        else{
+            UserBuilder.buildUser.setBirthdate(myCalendar.getTime());
+            UserBuilder.buildUser.setGroesse(Double.parseDouble(et_groesse.getText().toString()));
+            UserBuilder.buildUser.setGewicht(Double.parseDouble(et_gewicht.getText().toString()));
+            UserBuilder.buildUser.setGeschlecht(et_geschlecht.getText().toString());
+            UserBuilder.printUser();
+            Intent switchToRisk = new Intent(this, RegisterRiskActivity.class);
+            startActivity(switchToRisk);
+        }
+
+    }
+
+    public void loadComponents(){
+        et_birthday  = findViewById(R.id.et_birthdayInput);
+        et_birthday.setInputType(InputType.TYPE_NULL);
+        et_groesse = findViewById(R.id.et_groesseInput);
+        et_gewicht = findViewById(R.id.et_gewichtInput);
+        et_geschlecht = findViewById(R.id.et_geschlechtInput);
+        tv_birthdateDescription = findViewById(R.id.tv_birthdateDescripton);
+        tv_heightDescription = findViewById(R.id.tv_heightDescription);
+        tv_weightDescription = findViewById(R.id.tv_weightDescription);
+        tv_genderDescription = findViewById(R.id.tv_genderDescription);
     }
 }
