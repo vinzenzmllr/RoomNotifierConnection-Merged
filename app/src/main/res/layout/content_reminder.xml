@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:showIn="@layout/app_bar_reminder"
-    android:background="@color/colorPrimaryDark">
+    android:background="@drawable/gradient">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
@@ -14,7 +14,7 @@
         android:layout_marginTop="55dp"
         android:clipToPadding="false"
         tools:listitem="@layout/reminder_item"
-        android:background="@color/colorPrimaryDark"/>
+        android:background="@drawable/gradient"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/button_add_note"

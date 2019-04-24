@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -22,7 +22,7 @@
             android:layout_width="330dp"
             android:layout_height="40dp"
             android:layout_alignParentTop="true"
-            android:hint="Medikament"
+            android:hint="Medikamentenname"
             android:inputType="text"
             android:textColorHint="#646a72"
             android:background="@drawable/text_input"
@@ -39,7 +39,7 @@
                 android:id="@+id/textView"
                 android:layout_width="102dp"
                 android:layout_height="40dp"
-                android:gravity="center"
+                android:gravity="start|center"
                 android:text="Morgens"
                 android:textSize="18sp"
                 android:textColor="@android:color/white"/>
@@ -49,6 +49,7 @@
                 android:layout_width="126dp"
                 android:layout_height="40dp"
                 android:hint="[hh:mm]"
+                android:gravity="center"
                 android:inputType="time"
                 android:textColor="#646a72"
                 android:textColorHint="#646a72"
@@ -72,7 +73,7 @@
                 android:id="@+id/textView2"
                 android:layout_width="102dp"
                 android:layout_height="40dp"
-                android:gravity="center"
+                android:gravity="start|center"
                 android:text="Mittags"
                 android:textSize="18sp"
                 android:textColor="@android:color/white"/>
@@ -82,6 +83,7 @@
                 android:layout_width="126dp"
                 android:layout_height="40dp"
                 android:hint="[hh:mm]"
+                android:gravity="center"
                 android:inputType="time"
                 android:textColor="#646a72"
                 android:textColorHint="#646a72"
@@ -105,7 +107,7 @@
                 android:id="@+id/textView3"
                 android:layout_width="102dp"
                 android:layout_height="40dp"
-                android:gravity="center"
+                android:gravity="start|center"
                 android:text="Abends"
                 android:textSize="18sp"
                 android:textColor="@android:color/white"/>
@@ -115,6 +117,7 @@
                 android:layout_width="126dp"
                 android:layout_height="40dp"
                 android:hint="[hh:mm]"
+                android:gravity="center"
                 android:background="@drawable/text_input"
                 android:inputType="time"
                 android:textColor="#646a72"
@@ -129,13 +132,39 @@
 
         <TextView
             android:id="@+id/tv_help"
-            android:layout_width="307dp"
-            android:layout_height="232dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:textSize="18sp"
+            android:layout_marginTop="20dp"
             android:text="Hinweis:\n Bitte füllen Sie nur die Felder, die Sie benötigen und aktivieren Sie diese
             mithilfe des Schalters rechts daneben."
             android:textColor="@android:color/white"/>
 
+
+
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_marginTop="150dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <Button
+
+            android:id="@+id/bt_login"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_round_red"
+            android:onClick="saveNote"
+            android:text="Speichern"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

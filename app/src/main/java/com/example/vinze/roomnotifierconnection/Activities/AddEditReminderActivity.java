@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -57,7 +58,7 @@ public class AddEditReminderActivity extends AppCompatActivity {
         }
     }
 
-    private void saveNote() {
+    public void saveNote(View v) {
 
         String medicationName = editTexMedicationName.getText().toString();
         String morningTime = editTextmorningTime.getText().toString();
@@ -126,16 +127,16 @@ public class AddEditReminderActivity extends AppCompatActivity {
         return true;
     }
 
-    @Override
+    /*@Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.save_note:
-                saveNote();
+                //saveNote();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
-    }
+    }*/
 
     public boolean checkTime(String timeToCheck){
         if(timeToCheck.length() < 5 || timeToCheck.length() > 5 || Integer.parseInt(timeToCheck.substring(0,2)) >= 24
