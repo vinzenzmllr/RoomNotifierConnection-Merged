@@ -1,16 +1,14 @@
 package com.example.vinze.roomnotifierconnection.Activities.Login_Register;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.StrictMode;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.vinze.roomnotifierconnection.Entities.User;
 import com.example.vinze.roomnotifierconnection.JSONParser;
@@ -18,14 +16,11 @@ import com.example.vinze.roomnotifierconnection.R;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static com.example.vinze.roomnotifierconnection.R.color.colorAccent;
 
 public class RegisterUPActivity extends AppCompatActivity {
 
