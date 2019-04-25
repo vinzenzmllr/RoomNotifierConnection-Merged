@@ -5,19 +5,28 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.text.InputType;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.vinze.roomnotifierconnection.JSONParser;
 import com.example.vinze.roomnotifierconnection.R;
-import com.example.vinze.roomnotifierconnection.UserProcessor.User;
-import com.example.vinze.roomnotifierconnection.UserProcessor.UserBuilder;
+
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Locale;
 
 public class RegisterDataActivity extends AppCompatActivity {
@@ -33,6 +42,14 @@ public class RegisterDataActivity extends AppCompatActivity {
     public TextView tv_weightDescription;
     public TextView tv_genderDescription;
 
+    String username;
+
+    JSONParser jsonParser = new JSONParser();
+
+    private static final String url_update_product = "http://lucidus.htl5.org/phpshit/update_user.php";
+
+    private static final String TAG_SUCCESS = "success";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,9 +64,10 @@ public class RegisterDataActivity extends AppCompatActivity {
                         myCalendar.get(Calendar.DAY_OF_MONTH)).show();
             }
         });
+
+        Intent intent = getIntent();
+        username = intent.getStringExtra("EXTRA_USERNAME");
     }
-
-
 
 
     private void updateLabel() {
@@ -108,11 +126,14 @@ public class RegisterDataActivity extends AppCompatActivity {
             handleError(4);
         }
         else{
-            UserBuilder.buildUser.setBirthdate(myCalendar.getTime());
+            /*UserBuilder.buildUser.setBirthdate(myCalendar.getTime());
             UserBuilder.buildUser.setGroesse(Double.parseDouble(et_groesse.getText().toString()));
             UserBuilder.buildUser.setGewicht(Double.parseDouble(et_gewicht.getText().toString()));
             UserBuilder.buildUser.setGeschlecht(et_geschlecht.getText().toString());
-            UserBuilder.printUser();
+            UserBuilder.printUser();*/
+
+            new SaveUserDetails().execute();
+
             Intent switchToRisk = new Intent(this, RegisterRiskActivity.class);
             startActivity(switchToRisk);
         }
@@ -130,4 +151,46 @@ public class RegisterDataActivity extends AppCompatActivity {
         tv_weightDescription = findViewById(R.id.tv_weightDescription);
         tv_genderDescription = findViewById(R.id.tv_genderDescription);
     }
+
+    class SaveUserDetails extends AsyncTask<String, String, String> {
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+        }
+
+        protected String doInBackground(String... args) {
+
+            List<NameValuePair> params = new ArrayList<>();
+            params.add(new BasicNameValuePair("u_username", username));
+            params.add(new BasicNameValuePair("u_geschlecht", et_geschlecht.getText().toString()));
+            params.add(new BasicNameValuePair("u_gewicht", et_gewicht.getText().toString()));
+            params.add(new BasicNameValuePair("u_groesse", et_groesse.getText().toString()));
+            params.add(new BasicNameValuePair("u_geburtstag", et_birthday.getText().toString()));
+
+            JSONObject json = jsonParser.makeHttpRequest(url_update_product,"POST", params);
+
+            try {
+                int success = json.getInt(TAG_SUCCESS);
+
+                if (success == 1) {
+                    Intent i = getIntent();
+
+                    setResult(100, i);
+                    //finish();
+                } else {
+                    // failed to update product
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+            return null;
+        }
+
+        protected void onPostExecute(String file_url) {
+
+        }
+    }
+
 }
