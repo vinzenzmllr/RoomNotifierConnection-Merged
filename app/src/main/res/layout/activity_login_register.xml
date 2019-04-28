@@ -57,7 +57,7 @@
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/button_round_red"
-                android:onClick="onClick"
+                android:onClick="onClickLogin"
                 android:text="Anmelden"
                 android:textColor="@android:color/white"
                 android:textSize="18sp" />

@@ -1,5 +1,6 @@
 package com.example.vinze.roomnotifierconnection.Activities.Login_Register;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.AsyncTask;
@@ -93,9 +94,9 @@ public class RegisterUPActivity extends AppCompatActivity {
                 System.out.println(username);
             System.out.println("************************************************************");
 
-            Intent switchToUserData = new Intent(this,RegisterDataActivity.class);
-            switchToUserData.putExtra("EXTRA_USERNAME", username);
-            startActivity(switchToUserData);
+            Intent switchToRegisterData = new Intent(this,RegisterDataActivity.class);
+            switchToRegisterData.putExtra("EXTRA_USERNAME", username);
+            startActivity(switchToRegisterData);
         }
 
     }
@@ -107,6 +108,7 @@ public class RegisterUPActivity extends AppCompatActivity {
             super.onPreExecute();
         }
 
+        @SuppressLint("WrongThread")
         protected String doInBackground(String... args) {
             User user = new User();
             user.setPasswort(et_password.getText().toString());
